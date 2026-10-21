@@ -20,7 +20,8 @@
 
 <p><img src="assets/resume-mapping-overview.png" alt="原始简历和目标模板作为两个输入，经来源提取、字段映射、空项回查和排版检查，生成目标格式简历；缺少依据的字段保留空白" width="100%"></p>
 
-- **多格式来源**：PDF、Word、Excel 等；旧格式需要现有 Office 或 LibreOffice 转换能力。
+- **多格式来源**：PDF、Word、Excel 等，优先使用当前客户端已有的读取与文档工具。
+- **轻量使用**：大模型理解和映射信息，客户端工具处理文件与预览，不要求用户额外安装 Python、Office 或大型运行包。
 - **跟随目标模板**：使用用户提供的 Word 或 Excel 模板，尽量保留表格、字体、边框及分页要求。
 - **已有信息尽量填全**：检查最终空项，回查原文，修复漏提和错填；保留项目描述与职责。
 - **按需 OCR**：资料文字已足够时不强制识别证书照片；缺项或冲突时再针对相关页面补证。
@@ -36,12 +37,13 @@
 请从 https://github.com/yaoyouzhong/agent-skills 安装简历Mapping Skill，
 Skill 目录是 skills/resume-mapping。
 请先读取该目录的 SKILL.md 和 INSTALL.md，按当前客户端的真实技能目录安装，
-检查运行环境并完成包内自测，告诉我安装结果和仍缺少的能力。
+优先使用当前客户端已有的文档与预览工具，确认安装后能否正常使用；
+不要要求我额外安装开发环境或办公软件。
 ```
 
-也可以把仓库地址替换为 `https://gitee.com/yaoyouzhong/agent-skills`，或将 [ZIP 安装包](https://github.com/yaoyouzhong/agent-skills/releases/download/resume-mapping-v8.0.0/resume-mapping-v8-universal.skill.zip)交给 Agent，说“请安装这个 Skill”。[Gitee 包下载](https://gitee.com/yaoyouzhong/agent-skills/raw/main/dist/resume-mapping-v8-universal.skill.zip) · [SHA-256 校验值](dist/SHA256SUMS)
+也可以把仓库地址替换为 `https://gitee.com/yaoyouzhong/agent-skills`，或将 [v9 ZIP 安装包](https://raw.githubusercontent.com/yaoyouzhong/agent-skills/main/dist/resume-mapping-v9-universal.skill.zip)交给 Agent，说“请安装这个 Skill”。[Gitee 包下载](https://gitee.com/yaoyouzhong/agent-skills/raw/main/dist/resume-mapping-v9-universal.skill.zip) · [SHA-256 校验值](dist/SHA256SUMS)
 
-不限定三个或几个客户端，也不要求安装 Codex。客户端需要支持加载本地 Skill、读写文件、执行工具，并具备最终页图检查能力；只有聊天能力的大模型不能仅凭一句话安装和运行本地脚本。安装方法由宿主确定，不按模型名称猜路径。
+不限定三个或几个客户端，也不要求安装 Codex。客户端需要能够加载 Skill、访问资料并调用文档工具；最终排版检查需要实际页面预览和看图能力。安装优先使用宿主原生导入，不以运行 Python 脚本作为统一前置条件。纯聊天客户端无法仅靠 Skill 获得文件编辑工具。
 
 安装后只需提供两项资料：
 
@@ -51,6 +53,14 @@ Skill 目录是 skills/resume-mapping。
 已有信息准确填写；缺少依据的字段留空；保留全部项目和教育经历；
 检查剩余空项与最终排版，输出到【结果目录】。
 ```
+
+结果目录可选；未指定时由 Agent 使用独立输出目录，保留原件。只缺原始简历或目标模板时，Agent 会提示补充对应一项；两项已明确就开始处理。
+
+## 当前版本与验证
+
+**当前版本为简历Mapping v9**，代码、安装包和使用说明通过 GitHub、Gitee 的 `main` 分支提供。v9 优先复用客户端已有文档能力，并细化了已毕业学历选择、学历文字清理、空项回查和长内容排版规则。
+
+本轮以 32 份 PDF 和 50 份 Excel 真实简历，分别套用两种 Word 目标模板，完成 4 份汇编、723 页的内容与排版核验；17 组合成回归、187 项检查通过。验证环境为 Windows，使用宿主随附运行环境及已有 Word/Excel，本轮没有新增软件安装。Mac、其它客户端和其它复杂模板仍需按实际环境验证。详见[验证范围](docs/resume-mapping.md#本轮验证范围)。
 
 ## 资料与隐私
 
@@ -67,4 +77,4 @@ assets/                 公开主页图片，均不使用业务资料
 dist/                   可分发安装包与校验值
 ```
 
-新增 Skill 放到独立的 `skills/<skill-id>/` 目录，并补齐用途、输入输出、安装说明和必要验证。每个 Skill 独立发布；当前首发版本为 **简历Mapping v8**，发布标签 `resume-mapping-v8.0.0`。代码与安装包在 [GitHub](https://github.com/yaoyouzhong/agent-skills) 和 [Gitee](https://gitee.com/yaoyouzhong/agent-skills) 同步提供。
+新增 Skill 放到独立的 `skills/<skill-id>/` 目录，并补齐用途、输入输出、安装说明和必要验证。每个 Skill 独立维护版本；集合可以持续加入新的技能。
