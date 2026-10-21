@@ -1,0 +1,3 @@
+interface:
+  display_name: "简历Mapping"
+  short_description: "将现有简历信息准确填入指定模板，缺失字段可留空"

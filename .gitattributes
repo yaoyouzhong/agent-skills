@@ -1,0 +1,6 @@
+* text=auto
+*.md text eol=lf
+*.svg text eol=lf
+skills/resume-mapping/** -text
+dist/** -text
+*.png -text

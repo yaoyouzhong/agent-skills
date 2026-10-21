@@ -1,0 +1,8 @@
+# Versions exercised by this release; Python 3.11 or later.
+python-docx==1.2.0
+lxml==6.1.1
+pdfplumber==0.11.9
+openpyxl==3.1.5
+pypdfium2==5.14.0
+Pillow==12.3.0
+numpy==2.3.5

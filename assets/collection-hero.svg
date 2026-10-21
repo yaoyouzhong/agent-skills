@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="560" viewBox="0 0 1440 560"><rect width="1440" height="560" fill="#F7FAFD"/><style>.serif{font-family:SimSun,serif;fill:#142B43}.sans{font-family:Microsoft YaHei,sans-serif;fill:#142B43}.muted{fill:#64748B}.blue{fill:#1C65C9}</style><path d="M48 48V512" stroke="#1C65C9" stroke-width="8"/>
+<text x="88" y="105" class="sans blue" font-size="24" letter-spacing="4">AGENT SKILLS / 工作方法集</text>
+<text x="84" y="220" class="serif" font-size="64" font-weight="bold">把实用流程，</text>
+<text x="84" y="310" class="serif" font-size="64" font-weight="bold">做成可复用的 Skill</text>
+<text x="88" y="385" class="sans muted" font-size="26">可安装 · 可复用 · 可验证</text>
+<path d="M88 427H720" stroke="#D5DFEB" stroke-width="2"/>
+<text x="88" y="479" class="sans" font-size="26">首发：简历Mapping</text>
+<rect x="962" y="102" width="350" height="374" rx="4" fill="#FFFFFF" stroke="#D5DFEB" stroke-width="2"/>
+<path d="M1000 102V476" stroke="#1C65C9" stroke-width="3"/>
+<rect x="1279" y="148" width="67" height="77" fill="#1C65C9"/>
+<rect x="1279" y="243" width="67" height="77" fill="#0C7D75"/>
+<rect x="1279" y="338" width="67" height="77" fill="#D5DFEB"/>
+<text x="1030" y="175" class="sans muted" font-size="20">SKILL / 索引</text>
+<text x="1030" y="239" class="serif" font-size="31" font-weight="bold">简历Mapping</text>
+<text x="1030" y="283" class="sans muted" font-size="20">信息 → 指定模板</text>
+<path d="M1030 321H1240M1030 346H1208M1030 371H1240" stroke="#D5DFEB" stroke-width="3"/>
+<text x="1030" y="434" class="sans blue" font-size="19">RESUME-MAPPING</text></svg>
